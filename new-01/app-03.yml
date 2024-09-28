@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: directory-app 
+  namaespace: argocd
+spec:
+  destination:
+    namespace: default
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: new-01/directory
+    repoURL: https://github.com/jijeekk/argocd-tutorial.git
+    targetRevision: main
